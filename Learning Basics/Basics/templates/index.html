@@ -1,0 +1,16 @@
+{% extends "layouts.html" %}
+{% block title %}Index page{% endblock %}
+
+{% block content %}
+      <h1>hello</h1>
+      <ul>
+        {% for i in my %}
+             <li {% if i != 3 %} style="color:red">{{ i }}</li>
+        {% else %}
+             <li>{{ i }}</li>
+        {% endif %}
+
+        {% endfor %}
+      </ul>
+    <a href="{{ url_for('other') }}">Other</a>
+{% endblock %}
