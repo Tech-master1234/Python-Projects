@@ -1,0 +1,11 @@
+{% extends "layouts.html" %}
+{% block title %}other page{% endblock %}
+{% block content %}
+    <p>from other page<p>
+    <p>Filters working</p>
+    <p>{{ h|upper }}</p>
+    <p>{{ h|lower }}</p>
+    <p>{{ h|title }}</p>
+    <p>{{ h|replace('l','L') }}</p>
+    <p>{{ h|reverse }}</p>
+{% endblock %}
