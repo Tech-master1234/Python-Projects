@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg viewBox="0 0 200 50">
+                    <text x="10" y="35" class="logo-text">HippoType</text>
+                </svg>
+            </div>
+            <div class="user-info">
+                {% if session.username %}
+                    <span>Welcome, {{ session.username }}</span>
+                    <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('levels') }}" class="nav-link">Levels</a>
+            <a href="{{ url_for('leaderboard') }}" class="nav-link active">Leaderboard</a>
+        </div>
+
+        <div class="leaderboard-container">
+            <h2>Top Typists</h2>
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>WPM</th>
+                        <th>Accuracy</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for score in scores %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ score.username }}</td>
+                        <td>{{ score.wpm }}</td>
+                        <td>{{ score.accuracy }}%</td>
+                        <td>{{ score.score|round(2) }}</td>
+                        <td>{{ score.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html> 
