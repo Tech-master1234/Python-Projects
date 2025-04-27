@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(requests):
-    return HttpResponse("Hello world")
+    return HttpResponse("At Blog's Home Page")
 
-def detail(requests):
-    return HttpResponse("At details Page")
+def detail(requests,post_id):
+    return HttpResponse(f"At details Page {post_id}")
