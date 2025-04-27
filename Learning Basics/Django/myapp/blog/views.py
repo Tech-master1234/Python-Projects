@@ -11,7 +11,7 @@ def detail(requests,post_id):
     return HttpResponse(f"At details Page {post_id}")
 
 def old_url_redirect(requests):
-    return redirect(reverse('blog:new_page_url_something'))
+    return redirect(reverse('blog:new_page_url'))
 
 def new_url_view(requests):
     return HttpResponse("This is new URL")
