@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def index(requests):
     return HttpResponse("Hello world")
+
+def detail(requests):
+    return HttpResponse("At details Page")
