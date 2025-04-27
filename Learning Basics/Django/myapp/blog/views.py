@@ -5,10 +5,10 @@ from django.urls import reverse
 # Create your views here.
 
 def index(requests):
-    return HttpResponse("At Blog's Home Page")
+    return render(requests,'index.html')
 
 def detail(requests,post_id):
-    return HttpResponse(f"At details Page {post_id}")
+    return render(requests,'detail.html')
 
 def old_url_redirect(requests):
     return redirect(reverse('blog:new_page_url'))
