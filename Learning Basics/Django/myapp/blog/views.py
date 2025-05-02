@@ -8,10 +8,10 @@ def index(requests):
     blog_title = 'Todays picks'
     site_title = 'Blog Posts'
     posts = [
-        {'title':'Post 1','content':'Content of post 1'},
-        {'title':'Post 2','content':'Content of post 2'},
-        {'title':'Post 3','content':'Content of post 3'},
-        {'title':'Post 4','content':'Content of post 4'},
+        {'id':1,'title':'Post 1','content':'Content of post 1'},
+        {'id':2,'title':'Post 2','content':'Content of post 2'},
+        {'id':3,'title':'Post 3','content':'Content of post 3'},
+        {'id':4,'title':'Post 4','content':'Content of post 4'},
     ]
     return render(requests,'index.html',{'blog_title':blog_title,'site_title' : site_title,'posts':posts})
 
