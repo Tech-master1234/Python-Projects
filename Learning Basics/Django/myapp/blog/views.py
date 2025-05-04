@@ -12,12 +12,14 @@ from .models import Post
 # ]
 blog_title = 'Todays picks'
 site_title = 'Blog Posts'
+
 def index(requests):
     posts = Post.objects.all()
     return render(requests,'index.html',{'blog_title':blog_title,'site_title' : site_title,'posts':posts})
 
 def detail(requests,post_id):
-    return render(requests,'detail.html',{'post_id':post_id})
+    post = Post.objects.get(pk=post_id)
+    return render(requests,'detail.html',{'post':post})
 
 def old_url_redirect(requests):
     return redirect(reverse('blog:new_page_url'))
