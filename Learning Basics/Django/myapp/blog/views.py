@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.urls import reverse
 import logging
 from .models import Post
@@ -18,7 +18,10 @@ def index(requests):
     return render(requests,'index.html',{'blog_title':blog_title,'site_title' : site_title,'posts':posts})
 
 def detail(requests,post_id):
-    post = Post.objects.get(pk=post_id)
+    try:
+        post = Post.objects.get(pk=post_id)
+    except Post.DoesNotExist:
+        raise Http404("Post Does Not Exist!")
     return render(requests,'detail.html',{'post':post})
 
 def old_url_redirect(requests):
