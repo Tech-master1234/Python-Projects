@@ -17,9 +17,9 @@ def index(requests):
     posts = Post.objects.all()
     return render(requests,'index.html',{'blog_title':blog_title,'site_title' : site_title,'posts':posts})
 
-def detail(requests,post_id):
+def detail(requests,slug):
     try:
-        post = Post.objects.get(pk=post_id)
+        post = Post.objects.get(slug=slug)
     except Post.DoesNotExist:
         raise Http404("Post Does Not Exist!")
     return render(requests,'detail.html',{'post':post})
