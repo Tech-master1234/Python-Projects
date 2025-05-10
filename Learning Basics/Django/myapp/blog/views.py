@@ -20,9 +20,10 @@ def index(requests):
 def detail(requests,slug):
     try:
         post = Post.objects.get(slug=slug)
+        related_posts = Post.objects.filter(category = post.category).exclude(pk=post.id)
     except Post.DoesNotExist:
         raise Http404("Post Does Not Exist!")
-    return render(requests,'detail.html',{'post':post})
+    return render(requests,'detail.html',{'post':post, 'related_posts':related_posts})
 
 def old_url_redirect(requests):
     return redirect(reverse('blog:new_page_url'))
