@@ -37,8 +37,8 @@ def detail(requests,slug):
         raise Http404("Post Does Not Exist!")
     return render(requests,'detail.html',{'post':post, 'related_posts':related_posts})
 
-def old_url_redirect(requests):
-    return redirect(reverse('blog:new_page_url'))
 
-def new_url_view(requests):
-    return HttpResponse("This is new URL")
+def contact_view(requests):
+    return render(requests,'contact.html',{'blog_title':blog_title,'site_title' : site_title})
+
+
