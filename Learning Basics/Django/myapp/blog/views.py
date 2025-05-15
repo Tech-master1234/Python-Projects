@@ -3,6 +3,7 @@ from django.http import HttpResponse, Http404
 from django.urls import reverse
 import logging
 from .models import Post
+from .forms import ContactForm
 from django.core.paginator import Paginator
 # Create your views here.
 # posts = [
@@ -39,6 +40,11 @@ def detail(requests,slug):
 
 
 def contact_view(requests):
+    if requests.method == 'POST':
+        form = ContactForm(requests.POST)
+        if form.is_valid():
+            logger = logging.getLogger()
+            logger.debug(f'POST Data is {form.cleaned_data['name']},{form.cleaned_data['email']},{form.cleaned_data['message']}')
     return render(requests,'contact.html',{'blog_title':blog_title,'site_title' : site_title})
 
 
