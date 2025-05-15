@@ -9,16 +9,17 @@
                 <form method="post" class="row g-3">
                     {% csrf_token %}
                     <div class="col-md-6">
+                        <!-- Removed required field to test the is_valid function -->
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control" id="name" name="name" >
                     </div>
                     <div class="col-md-6">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control" id="email" name="email" >
                     </div>
                     <div class="col-12">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        <textarea class="form-control" id="message" name="message" rows="4" ></textarea>
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Submit</button>
