@@ -56,3 +56,6 @@ def contact_view(requests):
     return render(requests,'contact.html',{'blog_title':blog_title,'site_title' : site_title})
 
 
+def about_page(requests):
+    return render(requests,'about.html',{'blog_title':blog_title,'site_title' : site_title})
+
