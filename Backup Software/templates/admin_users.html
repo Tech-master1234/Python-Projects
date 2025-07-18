@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Admin - Manage Users{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Manage Users</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">Create New User</div>
+        <div class="card-body">
+            <form action="{{ url_for('create_user_admin') }}" method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role:</label>
+                    <select class="form-control" id="role" name="role">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Create User</button>
+            </form>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                    {% if user.id != current_user.id and not (user.id == 1 and current_user.is_admin and current_user.id != 1) %}
+                    <form action="{{ url_for('delete_user_admin', user_id=user.id) }}" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete user {{ user.username }}?');">Delete</button>
+                    </form>
+                    {% else %}
+                        {% if user.id == 1 and current_user.is_admin and current_user.id != 1 %}
+                        <button class="btn btn-secondary btn-sm" disabled>Primary Admin</button>
+                        {% else %}
+                        <button class="btn btn-secondary btn-sm" disabled>Cannot Delete Yourself</button>
+                        {% endif %}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if not (user.id == 1 and current_user.is_admin) or user.id == current_user.id %}
+                    <a href="{{ url_for('change_user_credentials_admin', user_id=user.id) }}" class="btn btn-sm text-white">Change Credentials</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2; /* Default for light mode */
+            color: #333;
+        }
+        body.dark-mode th {
+            background-color: #555; /* Darker background for dark mode */
+            color: #eee;
+        }
+        a {
+            margin-right: 10px;
+        }
+    </style>
+</div>
+{% endblock %}

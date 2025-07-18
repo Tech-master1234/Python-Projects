@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% block title %}All Tasks - Backup and Sync Tool{% endblock %}
+{% block content %}
+{% if current_user.is_admin %}
+        <div class="card mb-4">
+            <div class="card-header">Filter Tasks</div>
+            <div class="card-body">
+                <form method="GET" action="{{ url_for('all_tasks') }}">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="filter_owner">Owner:</label>
+                            <input type="text" class="form-control" id="filter_owner" name="owner" value="{{ request.args.get('owner', '') }}">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="filter_method">Method:</label>
+                            <select class="form-control" id="filter_method" name="method">
+                                <option value="">All</option>
+                                <option value="Backup" {% if request.args.get('method') == 'Backup' %}selected{% endif %}>Backup</option>
+                                <option value="Sync" {% if request.args.get('method') == 'Sync' %}selected{% endif %}>Sync</option>
+                                <option value="Bi-Sync" {% if request.args.get('method') == 'Bi-Sync' %}selected{% endif %}>Bi-Sync</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="filter_schedule_type">Schedule Type:</label>
+                            <select class="form-control" id="filter_schedule_type" name="schedule_type">
+                                <option value="">All</option>
+                                <option value="interval" {% if request.args.get('schedule_type') == 'interval' %}selected{% endif %}>Interval</option>
+                                <option value="specific_time" {% if request.args.get('schedule_type') == 'specific_time' %}selected{% endif %}>Specific Time</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="filter_status">Status:</label>
+                            <select class="form-control" id="filter_status" name="status">
+                                <option value="">All</option>
+                                <option value="Running" {% if request.args.get('status') == 'Running' %}selected{% endif %}>Running</option>
+                                <option value="Stopped" {% if request.args.get('status') == 'Stopped' %}selected{% endif %}>Stopped</option>
+                                <option value="Error" {% if request.args.get('status') == 'Error' %}selected{% endif %}>Error</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Apply Filters</button>
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary">Clear Filters</a>
+                </form>
+            </div>
+        </div>
+        <h3>All Tasks</h3>
+    {% endif %}
+
+
+     {% if tasks %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    {% if current_user.is_admin %}
+                    <th>Owner</th>
+                    {% endif %}
+                    <th>Method</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Schedule Type</th>
+                    <th>Interval</th>
+                    <th>Run At</th>
+                    <th>Status</th>
+                    <th>Last Run</th>
+                    <th>Start/Stop</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.id }}</td>
+                        {% if current_user.is_admin %}
+                        <td>{{ task.user.username }}</td>
+                        {% endif %}
+                        <td>{{ task.method }}</td>
+                        <td>{{ task.source }}</td>
+                        <td>{{ task.destination }}</td>
+                        <td>{{ task.schedule_type }}</td>
+                        <td>{{ task.interval_seconds }}s</td>
+                        <td>{{ task.run_at.strftime('%H:%M') if task.run_at else 'N/A' }}</td>
+                        <td>{{ task.status }}</td>
+                        <td>{{ task.last_run if task.last_run else 'N/A' }}</td>
+                        <td>
+                            {% if task.status == 'Stopped' or task.status == 'Error' %}
+                                <a href="{{ url_for('start_task', task_id=task.id) }}">Start</a>
+                            {% else %}
+                                <a href="{{ url_for('stop_task', task_id=task.id) }}">Stop</a>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ url_for('delete_task', task_id=task.id) }}" onclick="return confirm('Are you sure you want to delete this task?');">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No tasks created yet. Create one above!</p>
+    {% endif %}
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2; /* Default for light mode */
+            color: #333;
+        }
+        body.dark-mode th {
+            background-color: #555; /* Darker background for dark mode */
+            color: #eee;
+        }
+        body.dark-mode td {
+            border-color: #555;
+        }
+        a {
+            margin-right: 10px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            font-weight: bold;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -5px;
+            margin-left: -5px;
+        }
+        .form-group {
+            padding-right: 5px;
+            padding-left: 5px;
+            margin-bottom: 1rem;
+        }
+        .col-md-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-secondary {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode .card {
+            border-color: #555;
+            background-color: #444;
+        }
+        body.dark-mode .card-header {
+            background-color: #555;
+            border-bottom-color: #666;
+            color: #eee;
+        }
+        body.dark-mode .form-control {
+            background-color: #555;
+            border-color: #666;
+            color: #eee;
+        }
+        body.dark-mode .btn-primary {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        body.dark-mode .btn-secondary {
+            background-color: #545b62;
+            border-color: #545b62;
+        }
+
+    </style>
+{% endblock %}

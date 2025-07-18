@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Backup and Sync Tool{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .radio-group {
+            margin-bottom: 15px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        /* Dark mode button styles */
+        body.dark-mode .btn-primary {
+            background-color: #0056b3; /* Darker blue for dark mode */
+            border-color: #0056b3;
+        }
+        body.dark-mode .btn-primary:hover {
+            background-color: #004085;
+            border-color: #004085;
+        }
+        body.dark-mode .btn-info {
+            background-color: #138496; /* Darker info blue for dark mode */
+            border-color: #138496;
+        }
+        body.dark-mode .btn-info:hover {
+            background-color: #0f6674;
+            border-color: #0f6674;
+        }
+        body.dark-mode .btn-danger {
+            background-color: #c82333; /* Darker danger red for dark mode */
+            border-color: #c82333;
+        }
+        body.dark-mode .btn-danger:hover {
+            background-color: #bd2130;
+            border-color: #bd2130;
+        }
+        body.dark-mode .btn-secondary {
+            background-color: #545b62; /* Darker secondary gray for dark mode */
+            border-color: #545b62;
+        }
+        body.dark-mode .btn-secondary:hover {
+            background-color: #43484e;
+            border-color: #43484e;
+        }
+        .time-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .time-group input {
+            width: 24%;
+        }
+        .navbar {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333; /* Default for light mode */
+        }
+        body.dark-mode .navbar a {
+            color: #88c0d0; /* Light blue for dark mode */
+        }
+        a {
+            color: #007bff; /* Default link color for light mode */
+        }
+        body.dark-mode a {
+            color: #88c0d0; /* Link color for dark mode */
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .flash-messages {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+        .flash-messages li {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .flash-messages li.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #eee;
+        }
+        body.dark-mode .container {
+            background-color: #444;
+            border-color: #555;
+        }
+        body.dark-mode input[type="text"], body.dark-mode input[type="number"], body.dark-mode input[type="password"] {
+            background-color: #555;
+            border-color: #666;
+            color: #eee;
+        }
+        body.dark-mode .navbar a {
+            color: #88c0d0;
+        }
+        body.dark-mode .flash-messages li {
+            background-color: #5a6268;
+            color: #d1d7db;
+            border-color: #6c757d;
+        }
+        body.dark-mode .flash-messages li.error {
+            background-color: #dc3545;
+            color: #fff;
+            border-color: #dc3545;
+        }
+        /* Theme toggle button icons */
+        #theme-toggle .sun {
+            display: none; /* Hidden by default in light mode */
+        }
+        body.dark-mode #theme-toggle .sun {
+            display: inline; /* Visible in dark mode */
+        }
+        #theme-toggle .moon {
+            display: inline; /* Visible by default in light mode */
+        }
+        body.dark-mode #theme-toggle .moon {
+            display: none; /* Hidden in dark mode */
+        }
+    </style>
+</head>
+<body class="{% if settings.dark_mode %}dark-mode{% endif %}">
+    <div class="container">
+        <div class="navbar">
+            <div>
+                <a href="{{ url_for('index') }}">Home</a>
+                {% if current_user.is_authenticated and current_user.is_admin %}
+                <a href="{{ url_for('admin_users') }}">Manage Users</a>
+                    {% if current_user.is_admin %}
+                        <a href="{{ url_for('all_tasks') }}" >View All Tasks</a>
+                    {% endif %}
+                    
+                {% endif %}
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('settings') }}">Settings</a>
+                {% endif %}
+            </div>
+            <div>
+                {% if current_user.is_authenticated %}
+                    <span>Hello, {{ current_user.username }}!</span>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">Login</a>
+                {% endif %}
+                <button id="theme-toggle">
+                    <span class="sun">Light </span>
+                    <span class="moon">Dark</span>
+                </button>
+            </div>
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash-messages">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Function to set the theme and icon visibility
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+                themeToggle.querySelector('.sun').style.display = 'inline';
+                themeToggle.querySelector('.moon').style.display = 'none';
+            } else {
+                body.classList.remove('dark-mode');
+                themeToggle.querySelector('.sun').style.display = 'none';
+                themeToggle.querySelector('.moon').style.display = 'inline';
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDarkMode = body.classList.toggle('dark-mode');
+            const newTheme = isDarkMode ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+            setTheme(newTheme);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+        });
+    </script>
+</body>
+</html>
