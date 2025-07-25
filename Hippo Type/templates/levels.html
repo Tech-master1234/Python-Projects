@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levels</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg viewBox="0 0 200 50">
+                    <text x="10" y="35" class="logo-text">HippoType</text>
+                </svg>
+            </div>
+            <div class="user-info">
+                {% if session.username %}
+                    <span>Welcome, {{ session.username }}</span>
+                    <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+            <a href="{{ url_for('levels') }}" class="nav-link active">Levels</a>
+            <a href="{{ url_for('leaderboard') }}" class="nav-link">Leaderboard</a>
+        </div>
+
+        <div class="levels-container">
+            <h2>Levels</h2>
+            
+            <!-- Beginner Levels -->
+            <div class="difficulty-section">
+                <h3>Beginner (Levels 1-30)</h3>
+                <div class="levels-grid">
+                    {% for level in range(1, 31) %}
+                    <div class="level-card {% if level <= user_progress %}unlocked{% else %}locked{% endif %}">
+                        <div class="level-number">Level {{ level }}</div>
+                        {% if level <= user_progress %}
+                            <a href="{{ url_for('play_level', level=level) }}" class="play-btn">Play</a>
+                        {% else %}
+                            <div class="locked-icon">🔒</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Intermediate Levels -->
+            <div class="difficulty-section">
+                <h3>Intermediate (Levels 31-60)</h3>
+                <div class="levels-grid">
+                    {% for level in range(31, 61) %}
+                    <div class="level-card {% if level <= user_progress %}unlocked{% else %}locked{% endif %}">
+                        <div class="level-number">Level {{ level }}</div>
+                        {% if level <= user_progress %}
+                            <a href="{{ url_for('play_level', level=level) }}" class="play-btn">Play</a>
+                        {% else %}
+                            <div class="locked-icon">🔒</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Advanced Levels -->
+            <div class="difficulty-section">
+                <h3>Advanced (Levels 61-90)</h3>
+                <div class="levels-grid">
+                    {% for level in range(61, 91) %}
+                    <div class="level-card {% if level <= user_progress %}unlocked{% else %}locked{% endif %}">
+                        <div class="level-number">Level {{ level }}</div>
+                        {% if level <= user_progress %}
+                            <a href="{{ url_for('play_level', level=level) }}" class="play-btn">Play</a>
+                        {% else %}
+                            <div class="locked-icon">🔒</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Expert Levels -->
+            <div class="difficulty-section">
+                <h3>Expert (Levels 91-100)</h3>
+                <div class="levels-grid">
+                    {% for level in range(91, 101) %}
+                    <div class="level-card {% if level <= user_progress %}unlocked{% else %}locked{% endif %}">
+                        <div class="level-number">Level {{ level }}</div>
+                        {% if level <= user_progress %}
+                            <a href="{{ url_for('play_level', level=level) }}" class="play-btn">Play</a>
+                        {% else %}
+                            <div class="locked-icon">🔒</div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

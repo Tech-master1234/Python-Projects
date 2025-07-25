@@ -1,0 +1,543 @@
+{
+  "level1": {
+    "words": ["aaa", "sss", "ddd", "fff", "jjj", "kkk", "lll", ";;;"],
+    "wpm": 10,
+    "accuracy": 96
+  },
+  "level2": {
+    "words": ["aaaa", "ssss", "dddd", "ffff", "jjjj", "kkkk", "llll", ";;;;"],
+    "wpm": 12,
+    "accuracy": 96
+  },
+  "level3": {
+    "words": ["aaaaa", "sssss", "ddddd", "fffff", "jjjjj", "kkkkk", "lllll", ";;;;;"],
+    "wpm": 25,
+    "accuracy": 84
+  },
+  "level4": {
+    "words": ["aa", "ss", "dd", "ff", "jj", "kk", "ll", ";;"],
+    "wpm": 18,
+    "accuracy": 80
+  },
+  "level5": {
+    "words": ["aaa", "sss", "ddd", "fff", "jjj", "kkk", "lll", ";;;"],
+    "wpm": 17,
+    "accuracy": 81
+  },
+  "level6": {
+    "words": ["aaaa", "ssss", "dddd", "ffff", "jjjj", "kkkk", "llll", ";;;;"],
+    "wpm": 22,
+    "accuracy": 83
+  },
+  "level7": {
+    "words": ["aaaaa", "sssss", "ddddd", "fffff", "jjjjj", "kkkkk", "lllll", ";;;;;"],
+    "wpm": 27,
+    "accuracy": 85
+  },
+  "level8": {
+    "words": ["aa", "ss", "dd", "ff", "jj", "kk", "ll", ";;"],
+    "wpm": 19,
+    "accuracy": 80
+  },
+  "level9": {
+    "words": ["aaa", "sss", "ddd", "fff", "jjj", "kkk", "lll", ";;;"],
+    "wpm": 16,
+    "accuracy": 81
+  },
+  "level10": {
+    "words": ["aaaa", "ssss", "dddd", "ffff", "jjjj", "kkkk", "llll", ";;;;"],
+    "wpm": 21,
+    "accuracy": 82
+  },
+  "level11": {
+    "words": ["sad", "lad", "ask", "jazz"],
+    "wpm": 23,
+    "accuracy": 85
+  },
+  "level12": {
+    "words": ["sad", "lad", "ask", "jazz", "fall"],
+    "wpm": 24,
+    "accuracy": 86
+  },
+  "level13": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all"],
+    "wpm": 25,
+    "accuracy": 86
+  },
+  "level14": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad"],
+    "wpm": 26,
+    "accuracy": 87
+  },
+  "level15": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal"],
+    "wpm": 27,
+    "accuracy": 88
+  },
+  "level16": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal", "fad"],
+    "wpm": 28,
+    "accuracy": 88
+  },
+  "level17": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal", "fad", "flak"],
+    "wpm": 30,
+    "accuracy": 90
+  },
+  "level18": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal", "fad", "flak"],
+    "wpm": 31,
+    "accuracy": 90
+  },
+  "level19": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal", "fad", "flak"],
+    "wpm": 32,
+    "accuracy": 91
+  },
+  "level20": {
+    "words": ["sad", "lad", "ask"],
+    "wpm": 20,
+    "accuracy": 80
+  },
+  "level21": {
+    "words": ["sad", "lad", "ask", "jazz"],
+    "wpm": 24,
+    "accuracy": 85
+  },
+  "level22": {
+    "words": ["sad", "lad", "ask", "jazz", "fall"],
+    "wpm": 25,
+    "accuracy": 86
+  },
+  "level23": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all"],
+    "wpm": 26,
+    "accuracy": 87
+  },
+  "level24": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad"],
+    "wpm": 27,
+    "accuracy": 88
+  },
+  "level25": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal"],
+    "wpm": 28,
+    "accuracy": 89
+  },
+  "level26": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal", "fad"],
+    "wpm": 29,
+    "accuracy": 89
+  },
+  "level27": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal", "fad", "flak"],
+    "wpm": 30,
+    "accuracy": 90
+  },
+  "level28": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal", "fad", "flak"],
+    "wpm": 31,
+    "accuracy": 91
+  },
+  "level29": {
+    "words": ["sad", "lad", "ask", "jazz", "fall", "all", "dad", "sal", "fad", "flak"],
+    "wpm": 32,
+    "accuracy": 92
+  },
+  "level30": {
+    "words": ["sad", "lad", "ask"],
+    "wpm": 22,
+    "accuracy": 84
+  },
+    
+    "level31": {
+      "words": ["keyboard", "space", "shift", "return", "index"],
+      "wpm": 33,
+      "accuracy": 90
+    },
+    "level32": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick"],
+      "wpm": 34,
+      "accuracy": 90
+    },
+    "level33": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown"],
+      "wpm": 35,
+      "accuracy": 91
+    },
+    "level34": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps"],
+      "wpm": 36,
+      "accuracy": 91
+    },
+    "level35": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over"],
+      "wpm": 37,
+      "accuracy": 92
+    },
+    "level36": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy"],
+      "wpm": 38,
+      "accuracy": 92
+    },
+    "level37": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog"],
+      "wpm": 39,
+      "accuracy": 93
+    },
+    "level38": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type"],
+      "wpm": 40,
+      "accuracy": 93
+    },
+    "level39": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code"],
+      "wpm": 41,
+      "accuracy": 94
+    },
+    "level40": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code", "skill"],
+      "wpm": 42,
+      "accuracy": 94
+    },
+    "level41": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code", "skill", "test"],
+      "wpm": 43,
+      "accuracy": 94
+    },
+    "level42": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code", "skill", "test", "accuracy"],
+      "wpm": 44,
+      "accuracy": 95
+    },
+    "level43": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code", "skill", "test", "accuracy", "speed"],
+      "wpm": 45,
+      "accuracy": 95
+    },
+    "level44": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code", "skill", "test", "accuracy", "speed", "fingers"],
+      "wpm": 46,
+      "accuracy": 96
+    },
+    "level45": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code", "skill", "test", "accuracy", "speed", "fingers", "row"],
+      "wpm": 47,
+      "accuracy": 96
+    },
+    "level46": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code", "skill", "test", "accuracy", "speed", "fingers", "row"],
+      "wpm": 48,
+      "accuracy": 96
+    },
+    "level47": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code", "skill", "test", "accuracy", "speed", "fingers", "row"],
+      "wpm": 49,
+      "accuracy": 97
+    },
+    "level48": {
+      "words": ["keyboard", "space", "shift", "return", "index", "quick", "brown", "jumps", "over", "lazy", "dog", "type", "code", "skill", "test", "accuracy", "speed", "fingers", "row"],
+      "wpm": 50,
+      "accuracy": 97
+    },
+    "level49": {
+      "words": ["keyboard", "space", "shift", "return"],
+      "wpm": 51,
+      "accuracy": 97
+    },
+    "level50": {
+      "words": ["keyboard", "space", "shift", "return", "index"],
+      "wpm": 52,
+      "accuracy": 98
+    },
+    "level51": {
+      "words": ["mouse", "click", "scroll", "drag", "drop", "file"],
+      "wpm": 53,
+      "accuracy": 98
+    },
+    "level52": {
+      "words": ["window", "close", "open", "tab", "screen", "pixel", "color"],
+      "wpm": 54,
+      "accuracy": 98
+    },
+    "level53": {
+      "words": ["copy", "paste", "undo", "redo", "delete", "insert", "select", "edit"],
+      "wpm": 55,
+      "accuracy": 98
+    },
+    "level54": {
+      "words": ["fast", "slow", "cold", "hot", "blue", "red", "green", "yellow", "black"],
+      "wpm": 56,
+      "accuracy": 98
+    },
+    "level55": {
+      "words": ["tiger", "lion", "zebra", "whale", "shark", "dolphin", "snake", "eagle", "owl", "bear"],
+      "wpm": 57,
+      "accuracy": 98
+    },
+    "level56": {
+      "words": ["happy", "sad", "angry", "excited", "bored", "tired", "hungry", "thirsty", "curious", "proud", "brave"],
+      "wpm": 58,
+      "accuracy": 98
+    },
+    "level57": {
+      "words": ["coffee", "pizza", "burger", "pasta", "noodles", "salad", "fries", "soda", "juice", "water", "tea", "bread"],
+      "wpm": 59,
+      "accuracy": 99
+    },
+    "level58": {
+      "words": ["summer", "winter", "spring", "autumn", "rain", "snow", "sunny", "cloudy", "storm", "windy", "foggy", "night"],
+      "wpm": 60,
+      "accuracy": 99
+    },
+    "level59": {
+      "words": ["phone", "camera", "charger", "laptop", "tablet", "remote", "speaker", "microphone", "headphone", "keyboard", "mouse"],
+      "wpm": 61,
+      "accuracy": 99
+    },
+    "level60": {
+      "words": ["dragon", "wizard", "castle", "magic", "sword", "shield", "battle", "king", "queen", "knight", "hero", "quest"],
+      "wpm": 62,
+      "accuracy": 99
+    },
+    "level61": {
+      "words": ["The quick brown fox jumps over the lazy dog."],
+      "wpm": 63,
+      "accuracy": 99
+    },
+    "level62": {
+      "words": ["Pack my box with five dozen liquor jugs."],
+      "wpm": 64,
+      "accuracy": 99
+    },
+    "level63": {
+      "words": ["A wizard’s job is to vex chumps quickly in fog."],
+      "wpm": 65,
+      "accuracy": 99
+    },
+    "level64": {
+      "words": ["How razorback-jumping frogs can level six piqued gymnasts!"],
+      "wpm": 66,
+      "accuracy": 99
+    },
+    "level65": {
+      "words": ["The five boxing wizards jump quickly."],
+      "wpm": 67,
+      "accuracy": 99
+    },
+    "level66": {
+      "words": ["Jack quickly moved up the hill to find his cap."],
+      "wpm": 68,
+      "accuracy": 99
+    },
+    "level67": {
+      "words": ["Zany zebras zigzagged through the zoo zone."],
+      "wpm": 69,
+      "accuracy": 99
+    },
+    "level68": {
+      "words": ["She sells sea shells by the sea shore."],
+      "wpm": 70,
+      "accuracy": 99
+    },
+    "level69": {
+      "words": ["Typing fast requires lots of practice and patience."],
+      "wpm": 71,
+      "accuracy": 99
+    },
+    "level70": {
+      "words": ["Always rest your fingers on the home row keys."],
+      "wpm": 72,
+      "accuracy": 99
+    },
+    "level71": {
+      "words": ["Bright vixens jump; dozy fowl quack."],
+      "wpm": 73,
+      "accuracy": 99
+    },
+    "level72": {
+      "words": ["Jovial judges swiftly kick the lazy brown fox."],
+      "wpm": 74,
+      "accuracy": 99
+    },
+    "level73": {
+      "words": ["Six big devils from Japan quickly forgot how to waltz."],
+      "wpm": 75,
+      "accuracy": 99
+    },
+    "level74": {
+      "words": ["Giant balloons drift quietly across the cloudy sky."],
+      "wpm": 76,
+      "accuracy": 99
+    },
+    "level75": {
+      "words": ["Vivid kites flutter freely above city parks in summer."],
+      "wpm": 77,
+      "accuracy": 99
+    },
+    "level76": {
+      "words": ["Crazy clowns juggle wildly during the noisy festival."],
+      "wpm": 78,
+      "accuracy": 99
+    },
+    "level77": {
+      "words": ["Wild foxes swiftly vanish into the misty woods."],
+      "wpm": 79,
+      "accuracy": 99
+    },
+    "level78": {
+      "words": ["Brave kids build sandcastles along the sunny beach."],
+      "wpm": 80,
+      "accuracy": 99
+    },
+    "level79": {
+      "words": ["Elegant dancers perform gracefully on the grand stage."],
+      "wpm": 81,
+      "accuracy": 99
+    },
+    "level80": {
+      "words": ["A dozen eager puppies chased the bright bouncing ball."],
+      "wpm": 82,
+      "accuracy": 99
+    },
+    "level81": {
+      "words": [
+        "Typing is an essential skill in the digital age. Learning to type efficiently saves time and effort, allowing you to express your thoughts clearly and quickly. With practice, your muscle memory develops, making typing feel natural and intuitive."
+      ],
+      "wpm": 83,
+      "accuracy": 99
+    },
+    "level82": {
+      "words": [
+        "Touch typing involves using all ten fingers without looking at the keyboard. This method increases your speed and accuracy over time. Like learning to play a musical instrument, it requires consistency and deliberate practice."
+      ],
+      "wpm": 84,
+      "accuracy": 99
+    },
+    "level83": {
+      "words": [
+        "While it may seem difficult at first, the key to becoming a proficient typist is to maintain good posture, follow proper hand placement, and remain patient with your progress. Little by little, your typing speed will increase as you make fewer errors."
+      ],
+      "wpm": 85,
+      "accuracy": 99
+    },
+    "level84": {
+      "words": [
+        "Regular typing practice not only builds speed but also enhances your ability to concentrate for longer periods. Staying focused is crucial to mastering any skill, and typing is no exception. Set small goals and celebrate your improvements."
+      ],
+      "wpm": 86,
+      "accuracy": 99
+    },
+    "level85": {
+      "words": [
+        "Proper ergonomics are important while typing. Keep your wrists straight, your back supported, and your feet flat on the ground. A comfortable setup helps prevent strain and injuries, allowing you to type for extended periods without discomfort."
+      ],
+      "wpm": 87,
+      "accuracy": 99
+    },
+    "level86": {
+      "words": [
+        "Accuracy is more important than speed when learning to type. Fewer mistakes mean less time spent correcting errors. Slow down when necessary and focus on hitting the right keys; your speed will naturally improve over time."
+      ],
+      "wpm": 88,
+      "accuracy": 99
+    },
+    "level87": {
+      "words": [
+        "Home row keys are the foundation of touch typing. Your fingers should always return to the home row after pressing other keys. This habit helps maintain rhythm and improves your muscle memory for faster, more accurate typing."
+      ],
+      "wpm": 89,
+      "accuracy": 99
+    },
+    "level88": {
+      "words": [
+        "Typing tests can be an excellent way to track your progress. Challenge yourself regularly with new tests to identify weaknesses and measure improvements. Use your results to adjust your practice routines and set new personal records."
+      ],
+      "wpm": 90,
+      "accuracy": 99
+    },
+    "level89": {
+      "words": [
+        "Mastering typing is similar to mastering any other skill: it takes time, patience, and dedication. Celebrate small milestones along your journey to keep yourself motivated. Every minute of focused practice brings you closer to fluency."
+      ],
+      "wpm": 91,
+      "accuracy": 99
+    },
+    "level90": {
+      "words": [
+        "Consistent typing practice builds confidence and efficiency. Whether you are writing an essay, coding, or communicating online, strong typing skills allow you to focus more on your ideas and less on finding the right keys."
+      ],
+      "wpm": 92,
+      "accuracy": 99
+    },
+    "level91": {
+      "words": [
+        "Every expert typist started as a beginner. The journey to speed and accuracy begins with simple exercises and regular, mindful practice. Over time, these small steps build strong typing habits."
+      ],
+      "wpm": 93,
+      "accuracy": 99
+    },
+    "level92": {
+      "words": [
+        "Speed will come naturally if you focus first on accuracy. Typing slowly and deliberately ensures that your fingers learn the correct movements before trying to type faster."
+      ],
+      "wpm": 94,
+      "accuracy": 99
+    },
+    "level93": {
+      "words": [
+        "Use typing software or online games to make practice more enjoyable. A little bit of fun can make your sessions more engaging and help you stay consistent over the long term."
+      ],
+      "wpm": 95,
+      "accuracy": 99
+    },
+    "level94": {
+      "words": [
+        "Avoid looking down at your keyboard while typing. Trust your muscle memory and allow your fingers to find the correct keys. Every time you glance down, you slow your progress."
+      ],
+      "wpm": 96,
+      "accuracy": 99
+    },
+    "level95": {
+      "words": [
+        "Building endurance is part of improving typing skills. Challenge yourself with longer typing sessions once a week to strengthen your focus and maintain high performance over time."
+      ],
+      "wpm": 97,
+      "accuracy": 99
+    },
+    "level96": {
+      "words": [
+        "Consistency is key. Practicing even for ten minutes a day is far better than long, irregular sessions. Daily practice ensures that your typing reflexes stay sharp and improve steadily."
+      ],
+      "wpm": 98,
+      "accuracy": 99
+    },
+    "level97": {
+      "words": [
+        "Typing rhythm is as important as speed. Focus on keeping a steady pace rather than racing ahead. Smooth and consistent keystrokes lead to higher accuracy and better flow."
+      ],
+      "wpm": 99,
+      "accuracy": 99
+    },
+    "level98": {
+      "words": [
+        "Be patient with yourself during the learning process. Frustration can slow you down, but a calm, focused mind will help you type faster, make fewer errors, and stay motivated."
+      ],
+      "wpm": 100,
+      "accuracy": 99
+    },
+    "level99": {
+      "words": [
+        "Mastery in typing, like in any skill, is about mastering the basics first. Pay attention to finger placement, hand posture, and key recognition before worrying about raw speed."
+      ],
+      "wpm": 101,
+      "accuracy": 99
+    },
+    "level100": {
+      "words": [
+        "By the time you reach this point, you should feel comfortable typing without looking, maintaining good posture, and keeping a steady rhythm. Keep practicing, and typing will become second nature!"
+      ],
+      "wpm": 102,
+      "accuracy": 99
+    }
+  }
