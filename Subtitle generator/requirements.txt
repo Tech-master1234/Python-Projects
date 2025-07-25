@@ -1,5 +1,0 @@
-moviepy
-SpeechRecognition
-pydub
-langdetect
-translators
