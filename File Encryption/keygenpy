@@ -1,0 +1,10 @@
+from Crypto.Random import get_random_bytes
+
+# Generate a random AES key (32 bytes for 256-bit encryption)
+key = get_random_bytes(32)
+
+# Save the key to a file
+with open("aes_key.key", "wb") as key_file:
+    key_file.write(key)
+
+print("A 256-bit AES key has been generated and saved as 'aes_key.key'.")
